@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Such was not the way things were</title>
+        <link rel="icon" href="suchwasnot.svg" />
+        <link href="stylesheet.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26205412-4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-26205412-4');
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            let images = ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg", "background5.jpg", "background6.jpg", "background7.jpg", "background11.jpg"];
+            $(function () {
+                let i = Math.floor(Math.random() * images.length);
+                $("#photo").css("background-image", "url(" + images[i] + ")");
+                setInterval(function () {
+                    i++;
+                    if (i == images.length) {
+                        i = 0;
+                    }
+                    $("#photo").fadeOut("slow", function () {
+                        $(this).css("background-image", "url(" + images[i] + ")");
+                        $(this).fadeIn("slow");
+                    });
+                }, 30000);
+            });
+            
+            function show_paypal() {
+                document.getElementById('paypal').style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+    
+<div id="photo"></div>
+    
+<div id="container">
+    
+<h1>Such was not the way things were</h1>
+
+<p>
+Handmade paperbacks with short stories. Each booklet is numbered and unique.
+</p>
+
+<p class='author'>
+&mdash; Sebastiaan Mathôt
+</p>
+
+<div id='paypal'>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="APP7DPAV3PQ3L">
+<table>
+<tr><td><input type="hidden" name="on0" value="Ship to (price includes shipping and VAT)">Ship to (price includes shipping and VAT)</td></tr><tr><td><select name="os0">
+	<option value="Netherlands">Netherlands €19,00 EUR</option>
+	<option value="Other EU countries">Other EU countries €25,00 EUR</option>
+	<option value="United Kingdom">United Kingdom €25,00 EUR</option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="Select your title">Select your title</td></tr><tr><td><select name="os1">
+	<option value="The cephalopod and other stories">The cephalopod and other stories </option>
+	<option value="Mantis and Senescence">Mantis and Senescence </option>
+	<option value="Such was not the way things were and other stories">Such was not the way things were and other stories </option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="EUR">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+<hr />
+
+<div class='books'>
+
+    <div class='full-title'>
+        <span class='title'>The cephalopod</span> and other stories
+    </div>
+    <div class='description'>
+        Two researchers with a shared past collaborate on an experiment with octopuses. A neurologist works on a mysterious case. A young boy slows down his thoughts to the speed of plants. A priest battles with swarms of locusts.
+    </div>
+    <div class='details'>
+        60 pages. 4 stories. Illustration by Theo Danes.
+        <br />
+        €19 (NL) / €25 (EU + UK).    
+        <a href='javascript:show_paypal()'>Order.</a>
+    </div>
+
+    <p class="symbol"><img src="symbol.png" /></p>
+
+    <div class='full-title'>
+        <span class='title'>Mantis</span> and <span class='title'>Senescence</span>
+    </div>
+    <div class='description'>
+        A doctor does everything to help his patient, and gradually descents into a dark fairy tale. A woman studies asexual reproduction in octopuses, while her young boyfriend refuses to stay young forever.
+    </div>
+    <div class='details'>
+        88 pages. 2 stories. Illustration by Theo Danes.
+        <br />
+        €19 (NL) / €25 (EU + UK).    
+        <a href='javascript:show_paypal()'>Order.</a>
+    </div>
+
+    <p class="symbol"><img src="symbol.png" /></p>
+    
+    <div class='full-title'>
+        <span class='title'>Such was not the way things were</span> and other stories<br />
+    </div>
+    <div class='description'>
+        A lizard tells stories to a shrike. A life guard is on the night shift. A woman uses technology to defeat a fatal disease. A beekeeper has a complex relationship with his swarm.
+    </div>
+    <div class='details'>
+        56 pages. 4 stories.
+        <br />
+        €19 (NL) / €25 (EU + UK).    
+        <a href='javascript:show_paypal()'>Order.</a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class='details'>
+Do you have questions or suggestions? Would you like to order a book from outside the EU / UK? Don't hesitate to send an email to <a href="mailto:sebastiaan@suchwasnot.com">sebastiaan@suchwasnot.com</a>.
+</div>
+
+<hr />
+
+<div id="footer">
+    Suchwasnot.com is part of <a href="http://www.cogsci.nl/">CogSci</a>
+</div>
+
+</div>
+</body>
+</html>

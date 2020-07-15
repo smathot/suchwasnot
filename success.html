@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Such was not the way things were</title>
+        <link rel="icon" href="suchwasnot.svg" />
+        <link href="stylesheet.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26205412-4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-26205412-4');
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            let images = ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg", "background5.jpg", "background6.jpg", "background7.jpg", "background11.jpg"];
+            $(function () {
+                let i = Math.floor(Math.random() * images.length);
+                $("#photo").css("background-image", "url(" + images[i] + ")");
+                setInterval(function () {
+                    i++;
+                    if (i == images.length) {
+                        i = 0;
+                    }
+                    $("#photo").fadeOut("slow", function () {
+                        $(this).css("background-image", "url(" + images[i] + ")");
+                        $(this).fadeIn("slow");
+                    });
+                }, 30000);
+            });
+            
+            function show_paypal() {
+                document.getElementById('paypal').style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+    
+<div id="photo"></div>
+    
+<div id="container">
+    
+<h1>Thank you!</h1>
+
+<p>
+You will receive a confirmation once we've processed your order. <a href="/">Click here</a> to go back.
+</p>
+
+<hr />
+
+<div class='details'>
+Do you have questions or suggestions? Would you like to order a book from outside the EU / UK? Don't hesitate to send an email to <a href="mailto:sebastiaan@suchwasnot.com">sebastiaan@suchwasnot.com</a>.
+</div>
+
+<hr />
+
+<div id="footer">
+    Suchwasnot.com is part of <a href="http://www.cogsci.nl/">CogSci</a>
+</div>
+
+</div>
+</body>
+</html>
