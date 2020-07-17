@@ -2,6 +2,10 @@ body {
     background-color: #D7CCC8;
 }
 
+select {
+    width: 100%
+}
+
 p {
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
