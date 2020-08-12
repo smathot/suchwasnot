@@ -63,14 +63,18 @@ a {
 }
 
 .details {
-    margin-top: 10px;
-    font-size: 0.5em;
+    margin-top: 15px;
+    font-size: 0.45em;
     line-height: 1.8;
     font-family: 'Raleway', sans-serif;
 }
 
+.details a {
+    text-decoration: underline;
+}
+
 .description {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 0.7em;
     line-height: 1.5;
 }
@@ -81,27 +85,15 @@ a {
     text-align: center;
 }
 
-#paypal {
+#order-section {
     display: none;
+    background-color: #D7CCC8;    
+    border-radius: 4px;
     font-size: 0.6em;
     font-family: 'Raleway', sans-serif;
-    padding: 8px;
+    padding: 20px;
+    color: black;
     text-align: center;
-}
-
-#paypal table {
-    width: 100%;
-}
-
-#paypal select {
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.8em;
-    padding: 4px;
-    border-radius: 8px;
-}
-
-#paypal input {
-    margin-top: 24px;
 }
 
 .symbol img {

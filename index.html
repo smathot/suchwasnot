@@ -19,27 +19,8 @@
           gtag('config', 'UA-26205412-4');
         </script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript">
-            let images = ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg", "background5.jpg", "background6.jpg", "background7.jpg", "background11.jpg"];
-            $(function () {
-                let i = Math.floor(Math.random() * images.length);
-                $("#photo").css("background-image", "url(" + images[i] + ")");
-                setInterval(function () {
-                    i++;
-                    if (i == images.length) {
-                        i = 0;
-                    }
-                    $("#photo").fadeOut("slow", function () {
-                        $(this).css("background-image", "url(" + images[i] + ")");
-                        $(this).fadeIn("slow");
-                    });
-                }, 30000);
-            });
-            
-            function show_paypal() {
-                document.getElementById('paypal').style.display = "block";
-            }
-        </script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AT3ngFV0_47WDvoMTRO8kTMhwLyxqr3d2OPdfyuzEZoHQkCBuL9REo1ToxjBnJ3AhfFHRaYBywBrTel_&currency=EUR" data-sdk-integration-source="button-factory"></script>
+        <script type="text/javascript" src="suchwasnot.js"></script>
     </head>
     <body>
     
@@ -57,26 +38,55 @@ Handmade paperbacks with short stories. Each booklet is numbered and unique.
 &mdash; Sebastiaan Mathôt
 </p>
 
-<div id='paypal'>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="APP7DPAV3PQ3L">
-<table>
-<tr><td><input type="hidden" name="on0" value="Ship to (price includes shipping and VAT)">Ship to (price includes shipping and VAT)</td></tr><tr><td><select name="os0">
-	<option value="Netherlands">Netherlands €19,00 EUR</option>
-	<option value="Other EU countries">Other EU countries €25,00 EUR</option>
-	<option value="United Kingdom">United Kingdom €25,00 EUR</option>
-</select> </td></tr>
-<tr><td><input type="hidden" name="on1" value="Select your title">Select your title</td></tr><tr><td><select name="os1">
-	<option value="The cephalopod and other stories">The cephalopod and other stories </option>
-	<option value="Mantis and Senescence">Mantis and Senescence </option>
-	<option value="Such was not the way things were and other stories">Such was not the way things were and other stories </option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="EUR">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
-</form>
+<div id="order-section">
+    <div id="order-cephalopod-nl">
+        <p>You are about to order <b>The cephalopod and other stories</b>.<br />
+        Price (€19) includes shipping to The Netherlands and VAT (taxes).</p>
+        <div id="paypal-cephalopod-nl"></div>
+        <script>paypalButtons(19, "cephalopod").render('#paypal-cephalopod-nl');</script>
+    </div>
+    <div id="order-cephalopod-eu">
+        <p>You are about to order <b>The cephalopod and other stories</b>.<br />
+        Price (€25) includes shipping to the EU or UK and VAT (taxes).</p>
+        <div id="paypal-cephalopod-eu"></div>
+        <script>paypalButtons(25, "cephalopod").render('#paypal-cephalopod-eu');</script>
+    </div>
+    <div id="order-mantis-nl">
+        <p>You are about to order <b>Mantis and Senescence</b>.<br />
+        Price (€19) includes shipping to The Netherlands and VAT (taxes).</p>
+        <div id="paypal-mantis-nl"></div>
+        <script>paypalButtons(19, "mantis").render('#paypal-mantis-nl');</script>
+    </div>
+    <div id="order-mantis-eu">
+        <p>You are about to order <b>Mantis and Senescence</b>.<br />
+        Price (€25) includes shipping to the EU or UK and VAT (taxes).</p>
+        <div id="paypal-mantis-eu"></div>
+        <script>paypalButtons(25, "mantis").render('#paypal-mantis-eu');</script>
+    </div>
+    <div id="order-suchwasnot-nl">
+        <p>You are about to order <b>Such was not the way things were and other stories</b>.<br />
+        Price (€19) includes shipping to The Netherlands and VAT (taxes).</p>
+        <div id="paypal-suchwasnot-nl"></div>
+        <script>paypalButtons(19, "suchwasnot").render('#paypal-suchwasnot-nl');</script>
+    </div>
+    <div id="order-suchwasnot-eu">
+        <p>You are about to order <b>Such was not the way things were and other stories</b>.<br />
+        Price (€25) includes shipping to the EU or UK and VAT (taxes).</p>
+        <div id="paypal-suchwasnot-eu"></div>
+        <script>paypalButtons(25, "suchwasnot").render('#paypal-suchwasnot-eu');</script>
+    </div>
+    <div id="order-collection-nl">
+        <p>You are about to order <b>all three booklets</b>.<br />
+        Price (€34) includes shipping to The Netherlands and VAT (taxes).</p>
+        <div id="paypal-collection-nl"></div>
+        <script>paypalButtons(34, "collection").render('#paypal-collection-nl');</script>
+    </div>
+    <div id="order-collection-eu">
+        <p>You are about to order <b>all three booklets</b>.<br />
+        Price (€40) includes shipping to the EU or UK and VAT (taxes).</p>
+        <div id="paypal-collection-eu"></div>
+        <script>paypalButtons(40, "collection").render('#paypal-collection-eu');</script>
+    </div>
 </div>
 
 <hr />
@@ -92,10 +102,15 @@ Handmade paperbacks with short stories. Each booklet is numbered and unique.
     <div class='details'>
         60 pages. 4 stories. Illustration by Theo Danes.
         <br />
-        €19 (NL) / €25 (EU + UK).    
-        <a href='javascript:show_paypal()'>Order.</a>
+        Order <b>this booklet</b> and ship to
+        <a href='javascript:show_order("order-cephalopod-nl")'>The Netherlands (€19)</a> or
+        <a href='javascript:show_order("order-cephalopod-eu")'>the EU or UK (€25)</a>.
+        <br />
+        Order <b>all three booklets</b> and ship to
+        <a href='javascript:show_order("order-collection-nl")'>The Netherlands (€34)</a> or
+        <a href='javascript:show_order("order-collection-eu")'>the EU or UK (€40)</a>.        
     </div>
-
+    
     <p class="symbol"><img src="symbol.png" /></p>
 
     <div class='full-title'>
@@ -107,8 +122,14 @@ Handmade paperbacks with short stories. Each booklet is numbered and unique.
     <div class='details'>
         88 pages. 2 stories. Illustration by Theo Danes.
         <br />
-        €19 (NL) / €25 (EU + UK).    
-        <a href='javascript:show_paypal()'>Order.</a>
+        Order <b>this booklet</b> and ship to
+        <a href='javascript:show_order("order-mantis-nl")'>The Netherlands (€19)</a> or
+        <a href='javascript:show_order("order-mantis-eu")'>the EU or UK (€25)</a>.
+        <br />
+        Order <b>all three booklets</b> and ship to
+        <a href='javascript:show_order("order-collection-nl")'>The Netherlands (€34)</a> or
+        <a href='javascript:show_order("order-collection-eu")'>the EU or UK (€40)</a>.        
+
     </div>
 
     <p class="symbol"><img src="symbol.png" /></p>
@@ -122,8 +143,13 @@ Handmade paperbacks with short stories. Each booklet is numbered and unique.
     <div class='details'>
         56 pages. 4 stories.
         <br />
-        €19 (NL) / €25 (EU + UK).    
-        <a href='javascript:show_paypal()'>Order.</a>
+        Order <b>this booklet</b> and ship to
+        <a href='javascript:show_order("order-suchwasnot-nl")'>The Netherlands (€19)</a> or
+        <a href='javascript:show_order("order-suchwasnot-eu")'>the EU or UK (€25)</a>.
+        <br />
+        Order <b>all three booklets</b> and ship to
+        <a href='javascript:show_order("order-collection-nl")'>The Netherlands (€34)</a> or
+        <a href='javascript:show_order("order-collection-eu")'>the EU or UK (€40)</a>.        
     </div>
 
 </div>
