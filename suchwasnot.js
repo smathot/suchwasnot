@@ -34,7 +34,7 @@ function show_order(id) {
     document.getElementById('order-collection-nl').style.display = "none";
     document.getElementById('order-collection-eu').style.display = "none";
     document.getElementById(id).style.display = "block";
-    document.getElementById(id).scrollIntoView();
+    document.getElementById('top-title').scrollIntoView();
 }
 
 function paypalButtons(amount, description) {
