@@ -6,8 +6,10 @@ let images = [
     "background5.jpg",
     "background6.jpg",
     "background7.jpg",
-    "background11.jpg"
-];
+    "background11.jpg",
+    "background12.jpg",
+    "background13.jpg"
+]
 $(function () {
     let i = Math.floor(Math.random() * images.length);
     $("#photo").css("background-image", "url(" + images[i] + ")");
@@ -25,10 +27,6 @@ $(function () {
 
 function show_order(id) {
     document.getElementById('order-section').style.display = "block";
-    document.getElementById('order-cephalopod-nl').style.display = "none";
-    document.getElementById('order-cephalopod-eu').style.display = "none";
-    document.getElementById('order-mantis-nl').style.display = "none";
-    document.getElementById('order-mantis-eu').style.display = "none";
     document.getElementById('order-suchwasnot-nl').style.display = "none";
     document.getElementById('order-suchwasnot-eu').style.display = "none";
     document.getElementById('order-collection-nl').style.display = "none";
