@@ -11,6 +11,16 @@ p {
     margin-block-end: 0.5em;
 }
 
+.cover-image {
+    float: left;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.cover-image img {
+    width: 150px;
+}
+
 #photo {
     background-image: url("background2.jpg");
     position: fixed;
