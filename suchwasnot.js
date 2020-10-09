@@ -9,7 +9,8 @@ let images = [
     "background11.jpg",
     "background12.jpg",
     "background13.jpg",
-    "background14.jpg"
+    "background14.jpg",
+    "background15.jpg"
 ]
 $(function () {
     let i = Math.floor(Math.random() * images.length);

@@ -21,6 +21,15 @@ p {
     width: 150px;
 }
 
+.cover-image-both {
+    float: left;
+    margin-right: 15px;
+}
+
+.cover-image-both img {
+    width: 150px;
+}
+
 #photo {
     background-image: url("background2.jpg");
     position: fixed;
@@ -74,7 +83,7 @@ a {
 
 .details {
     margin-top: 15px;
-    font-size: 0.45em;
+    font-size: 0.5em;
     line-height: 1.8;
     font-family: 'Raleway', sans-serif;
 }
