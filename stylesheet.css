@@ -120,8 +120,30 @@ a {
 }
 
 .symbol {
+    display: block;
     width: 100%;
     text-align: center;
+}
+
+#collection-box {
+    width: 100%;
+    min-height: 100px;
+    display: block;
+}
+
+.youtube-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (min-width: 700px) {
