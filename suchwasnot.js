@@ -29,11 +29,8 @@ $(function () {
 
 function show_order(id) {
     document.getElementById('order-section').style.display = "block";
-    document.getElementById('order-suchwasnot-nl').style.display = "none";
     document.getElementById('order-suchwasnot-eu').style.display = "none";
-    document.getElementById('order-botanist-nl').style.display = "none";
     document.getElementById('order-botanist-eu').style.display = "none";
-    document.getElementById('order-collection-nl').style.display = "none";
     document.getElementById('order-collection-eu').style.display = "none";
     document.getElementById(id).style.display = "block";
     document.getElementById('top-title').scrollIntoView();
