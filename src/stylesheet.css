@@ -161,18 +161,16 @@ a {
 .link-buttons a {
     display: inline-block;
     text-decoration: none;
-    border-radius: 4px;
-    background: #D7CCC8;
+    border-radius: 2px;
+    background: #FDEFBA;
     color: black;
-    margin: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    min-width: 35px;
+    margin: 0px 4px 6px 0px;
+    min-width: 40px;
     text-align: center;
 }
 
 .link-buttons a:hover {
-    background: #a1887f;
+    background: #fce68d;
 }
 
 .description {
