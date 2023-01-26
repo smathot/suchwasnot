@@ -13,6 +13,7 @@ let images = [
     "background15.jpg"
 ]
 $(function () {
+    if (document.getElementById("photo") == null) return
     let i = Math.floor(Math.random() * images.length);
     $("#photo").css("background-image", "url(" + images[i] + ")");
     setInterval(function () {
@@ -26,6 +27,7 @@ $(function () {
         });
     }, 30000);
 });
+
 
 function show_order(id) {
     document.getElementById('order-section').style.display = "block";

@@ -243,10 +243,34 @@ a {
         border-radius: 8px;
         font-size: 1.9em;
     }
+    .scrolled-down {
+        margin-top: 70vh!important;
+    }
 }
 
 @media screen and (max-width: 700px) {
     #container {
         font-size: 1.5em;
     }
+    .scrolled-down {
+        margin-top: 75vh!important;
+    }
+}
+
+#scroll-down-indicator {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 30px;
+}
+
+#background-video {
+    position: fixed;
+    object-fit: cover;
+    top: 0px;
+    left:0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
 }
