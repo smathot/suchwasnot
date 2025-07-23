@@ -23,12 +23,8 @@
         <script type="text/javascript" src="suchwasnot.js"></script>
     </head>
     <body>
-    
-<video autoplay muted loop id="background-video">
-  <source src="background1mbps.mp4" type="video/mp4">
-</video>
-    
-<!-- div id="photo"></div -->
+
+<div id="photo"></div>
 
 <div id="container" class="scrolled-down">
 
@@ -36,52 +32,66 @@
 <h1 id='top-title'>Such was not the way things were</h1>
 
 <p>
-Handmade paperbacks with short stories, numbered and unique.
+Stories about worlds that could be ours and people that could be us.
 </p>
 
-<div id="scroll-down-indicator">︾</div>
 
-<div id="order-section">
-<div id="order-suchwasnot-eu">
-        <p>You are about to order <b>Such was not the way things were and other stories</b>.<br />
-        Price €21 includes shipping to the EU and VAT (taxes).</p>
-        <div id="paypal-suchwasnot-eu"></div>
-        <script>paypalButtons(21, "suchwasnot").render('#paypal-suchwasnot-eu');</script>
+
+    <div class="all-covers">
+        <div class="cover-column">
+            <a href="#griffinfly">
+            <img src="griffinfly-cover.jpg">
+            </a>
+        </div>
+        <div class="cover-column-padding"></div>
+        <div class="cover-column">
+            <a href="#botanist">
+            <img src="botanist-cover.jpg">
+            </a>
+        </div>
+        <div class="cover-column-padding"></div>
+        <div class="cover-column">
+            <a href="#suchwasnot">
+            <img src="suchwasnot-cover.jpg"">
+            </a>
+        </div>
     </div>
-    <div id="order-botanist-eu">
-        <p>You are about to order <b>The botanist and other stories</b>.<br />
-        Price (€21) includes shipping to the EU and VAT (taxes).</p>
-        <div id="paypal-botanist-eu"></div>
-        <script>paypalButtons(21, "botanist").render('#paypal-botanist-eu');</script>
-    </div>
-    <div id="order-collection-eu">
-        <p>You are about to order <b>both books</b>.<br />
-        Price (€31) includes shipping to the EU and VAT (taxes).</p>
-        <div id="paypal-collection-eu"></div>
-        <script>paypalButtons(31, "collection").render('#paypal-collection-eu');</script>
-    </div>
+    
+<p>
+Each book is made by hand, signed, numbered, and unique.
+</p>
+
+<div class='details'>
+€20 per book or €45 for the full collection of three books. Prices exclude shipping. To order, send an email to <a href="mailto:sebastiaan@suchwasnot.com">sebastiaan@suchwasnot.com</a>.
 </div>
-
-<hr />
-
+<hr>
+    
 <div class='books'>
-
-    <div class='cover-image-both'><img src="both-cover.jpg" /></div>
-
-    <div class='details link-buttons'>
-        <a href='javascript:show_order("order-collection-eu")'>€31</a> Both handmade paperbacks (includes shipping within EU and VAT)
-        <br />
-        <a href='https://bmc.xyz/l/7lmpwI5RA'>€10</a> Both e-books (mobi, epub, and pdf)
+    <div class='full-title'>
+    <span class='title' id='griffinfly'>Griffinfly</span><br />
     </div>
     
-    <p class="symbol" style="margin-top:40px"><img src="symbol.png" /></p>
+    <div class='cover-image'><img src="griffinfly-cover.jpg" /></div>
     
+    <div class='book-summary'>
+    <div class='description'>
+        A soldier seeks refuge in the aftermath of a nuclear war.
+        A psychotherapist uses a radical treatment to save a client.
+    </div>
+    
+    <div class='details link-buttons'>
+        141 pages. 2 stories. Written by Sebastiaan Mathôt. Illustrations by Sophie Slaats and Theo Danes.
+    </div>
+    </div>
+    
+    <hr>
+
     <div class='full-title'>
-    <span class='title'>The botanist</span> and other stories<br />
+    <span class='title' id='botanist'>The botanist</span> and other stories<br />
     </div>
     
     <div class='cover-image'><img src="botanist-cover.jpg" /></div>
-    
+    <div class='book-summary'>
     <div class='description'>
         An old man waits while a baboon keeps him company.
         A neurologist works on a mysterious case.
@@ -92,20 +102,18 @@ Handmade paperbacks with short stories, numbered and unique.
     </div>
     
     <div class='details link-buttons'>
-        134 pages. 6 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
-        <br />
-        <a href='javascript:show_order("order-botanist-eu")'>€21</a> This handmade paperback (includes shipping within EU and VAT)
-        <br />
-        <a href='https://bmc.xyz/l/67cgQ1CWn'>€5</a> This e-book (mobi, epub, and pdf)
+        143 pages. 6 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
+    </div>
     </div>
 
-    <p class="symbol"><img src="symbol.png" /></p>
+    <hr>
     
     <div class='full-title'>
-        <span class='title'>Such was not the way things were</span> and other stories<br />
+        <span class='title' id='suchwasnot'>Such was not the way things were</span> and other stories<br />
     </div>
     
     <div class='cover-image'><img src="suchwasnot-cover.jpg" /></div>
+    <div class='book-summary'>
     <div class='description'>
         <a href="such-was-not-the-way-things-were.html">A lizard tells stories to a shrike.</a>
         A woman studies asexual reproduction in octopuses, while her young boyfriend refuses to stay young forever.
@@ -113,13 +121,10 @@ Handmade paperbacks with short stories, numbered and unique.
         A life guard is on the night shift.
         A doctor does everything to help his patient, and gradually descends into a dark fairy tale.
     </div>
+    </div>
     
     <div class='details link-buttons'>
-        134 pages. 5 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
-        <br />
-        <a href='javascript:show_order("order-suchwasnot-eu")'>€21</a> This handmade paperback (includes shipping within EU and VAT)
-        <br />
-        <a href='https://bmc.xyz/l/uCRd1VNhW'>€5</a> This e-book (mobi, epub, and pdf)
+        139 pages. 5 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
     </div>    
 </div>
 
@@ -127,12 +132,6 @@ Handmade paperbacks with short stories, numbered and unique.
 
 <div class="youtube-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cifj5UYQDZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-</div>
-
-<hr />
-
-<div class='details'>
-Do you have questions or suggestions? Would you like to order a book from outside the EU / UK? Don't hesitate to send an email to <a href="mailto:sebastiaan@suchwasnot.com">sebastiaan@suchwasnot.com</a>.
 </div>
 
 <hr />

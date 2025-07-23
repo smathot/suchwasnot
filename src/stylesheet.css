@@ -180,6 +180,10 @@ a {
     line-height: 1.5;
 }
 
+.book-summary {
+    min-height: 210px;
+}
+
 .description a {
     text-decoration: underline;
 }
@@ -239,21 +243,15 @@ a {
 @media screen and (min-width: 700px) {
     #container {
         max-width: 600px;
-        margin: 100px auto;
+        margin: 50px auto;
         border-radius: 8px;
         font-size: 1.9em;
-    }
-    .scrolled-down {
-        margin-top: 70vh!important;
     }
 }
 
 @media screen and (max-width: 700px) {
     #container {
         font-size: 1.5em;
-    }
-    .scrolled-down {
-        margin-top: 75vh!important;
     }
 }
 
@@ -273,4 +271,25 @@ a {
     z-index: -1;
     width: 100vw;
     height: 100vh;
+}
+
+.all-covers {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.cover-column {
+    flex: 1;
+}
+
+.cover-column-padding {
+    flex: 1;
+    max-width: 20px;
+}
+
+.cover-column img {
+    width: 100%; /* Make image fill the container */
+    display: block; /* Remove extra space below image */
 }
