@@ -18,7 +18,22 @@
       gtag('config', 'UA-26205412-4');
     </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AT3ngFV0_47WDvoMTRO8kTMhwLyxqr3d2OPdfyuzEZoHQkCBuL9REo1ToxjBnJ3AhfFHRaYBywBrTel_&currency=EUR" data-sdk-integration-source="button-factory"></script>
+    <style>
+        /* Language-specific content visibility */
+        html:lang(en) [lang="nl"] {
+            display: none;
+        }
+        
+        html:lang(nl) [lang="en"] {
+            display: none;
+        }
+        
+        /* Ensure spans don't add extra spacing */
+        span[lang] {
+            display: inline;
+        }
+    </style>
+    
     <script>
 let images = [
     "background1.jpg",
@@ -50,242 +65,41 @@ $(function () {
     }, 30000);
 });
 
-
-function show_order(id) {
-    document.getElementById('order-section').style.display = "block";
-    document.getElementById('order-suchwasnot-eu').style.display = "none";
-    document.getElementById('order-botanist-eu').style.display = "none";
-    document.getElementById('order-collection-eu').style.display = "none";
-    document.getElementById(id).style.display = "block";
-    document.getElementById('top-title').scrollIntoView();
-}
-
-function paypalButtons(amount, description) {
-    return paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'paypal',
-          
-      },
-      createOrder: function(data, actions) {
-          return actions.order.create({
-              purchase_units: [{
-                  amount: {
-                      value: amount
-                  },
-                  description: description
-              }]
-          });
-      },
-      onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-              alert('Transaction completed by ' + details.payer.name.given_name + '!');
-          });
-      }
-    })
-}
-
-
-const content = {
-  en: {
-    title: "Such was not the way things were",
-    subtitle: "Stories of strange minds and the worlds they live in. Fact and fiction. English and Dutch. Written by Sebastiaan Mathôt.",
-    pricing: "Four books for €45 (free shipping within the EU). The order will ship in September, as soon as Een wereld vol denkers is available. <a href=''>Order now</a>",
-    handmade: "Offer: four times fact and fiction (pre-order)",
-    books: {
-      eenwereldvoldenkers: {
-        title: "Een wereld vol denkers",
-        subtitle: "(pre-order)",
-        stories: [
-          "What can we say about who has conscious experience, who doesn't, and who has only a little bit of conscious experience? Will AI ever be conscious? Does a flower perceive the sun as it tracks the sun's movement through the sky? Een wereld vol denkers is an exploration of the minds of humans, animals, plants, and AI."
-        ],
-        details: "Dutch. Non-fictions. Illustrations by Theo Danes. Will be published early september by Uitgeverij Balans. €24 (free shipping within the EU). <a href=''>Order now</a>"
-      },
-      griffinfly: {
-        title: "Griffinfly",
-        stories: [
-          "A soldier seeks refuge in the aftermath of a nuclear war.",
-          "A psychotherapist uses a radical treatment to save a client."
-        ],
-        details: "English. 141 pages. 2 stories. Written by Sebastiaan Mathôt. Illustrations by Sophie Slaats and Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a>"
-      },
-      botanist: {
-        title: "The botanist",
-        subtitle: "and other stories",
-        stories: [
-          "An old man waits while a baboon keeps him company.",
-          "A neurologist works on a mysterious case.",
-          "A beekeeper has a complex relationship with his swarm.",
-          '<a href="the-cephalopod.html">Two researchers with a shared past collaborate on an experiment with octopuses.</a>',
-          "A priest battles with swarms of locusts.",
-          "A young boy slows down his thoughts to the speed of plants."
-        ],
-        details: "English. 143 pages. 6 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a>"
-      },
-      suchwasnot: {
-        title: "Such was not the way things were",
-        subtitle: "and other stories",
-        stories: [
-          '<a href="such-was-not-the-way-things-were.html">A lizard tells stories to a shrike.</a>',
-          "A woman studies asexual reproduction in octopuses, while her young boyfriend refuses to stay young forever.",
-          "A woman uses technology to defeat a fatal disease.",
-          "A life guard is on the night shift.",
-          "A doctor does everything to help his patient, and gradually descends into a dark fairy tale."
-        ],
-        details: "English. 139 pages. 5 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a>"
-      }
-    }
-  },
-  
-  nl: {
-    title: "Such was not the way things were",
-    subtitle: "Verhalen over vreemde denkers en de werelden waarin ze leven. Feit en fictie. Engels- en Nederlandstalig. Geschreven door Sebastiaan Mathôt.",
-    pricing: "Vier boeken voor €45 (geen verzendkosten binnen de EU). De boeken worden verzonden in september zodra Een wereld vol denkers is verschenen. <a href=''>Bestel nu</a>",
-    handmade: "Actie: vier maal feit en fictie (voorbestelling)",
-    books: {
-      eenwereldvoldenkers: {
-        title: "Een wereld vol denkers",
-        subtitle: "(voorbestelling)",
-        stories: [
-          "Kunnen we iets zeggen over wie er bewustzijn heeft, en wie niet, en wie maar een beetje? Kan AI ooit bewust worden? Neemt een bloem de zon waar als hij gedurende de dag met de zon meedraait? Een wereld vol denkers is een ontdekkingsreis door de gedachtewerelden van mens, dier, plant en AI."
-        ],
-        details: "Nederlandstalig. Non-fictie. Illustraties door Theo Danes. Verschijnt begin september bij Uitgeverij Balans. €24 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a>"
-      },
-      griffinfly: {
-        title: "Griffinfly",
-        stories: [
-          "Een soldaat houdt zich schuil in de nasleep van een kernoorlog.",
-          "Een psychotherapeut gebruikt een radicale behandeling om een cliënt te redden."
-        ],
-        details: "Engelstalig. 141 pagina's. 2 verhalen. Geschreven door Sebastiaan Mathôt. Illustraties door Sophie Slaats en Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a>"
-      },
-      botanist: {
-        title: "The botanist",
-        subtitle: "and other stories",
-        stories: [
-          "Een oude man en een baviaan wachten samen ergens op.",
-          "Een neuroloog behandelt een mysterieuse patiënt.",
-          "Een imker heeft een ingewikkelde relatie met zijn zwerm.",
-          '<a href="the-cephalopod.html">Twee onderzoekers met een gedeeld verleden doen samen onderzoek naar de intelligentie van octopussen.</a>',
-          "Een priester vecht met sprinkhanen.",
-          "Een jongen vertraagt zijn gedachten tot de snelheid van planten."
-        ],
-        details: "Engelstalig. 143 pagina's. 6 verhalen. Geschreven door Sebastiaan Mathôt. Illustratie door Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a>"
-      },
-      suchwasnot: {
-        title: "Such was not the way things were",
-        subtitle: "and other stories",
-        stories: [
-          '<a href="such-was-not-the-way-things-were.html">Een hagedis vertelt verhalen aan een kleine roofvogel.</a>',
-          "Een vrouw doet onderzaak naar ongeslachtelijke voortplanting bij octopussen, terwijl haar vriend weigert om voor altijd jong te blijven.",
-          "Een vrouw verslaat een dodelijke ziekte met behulp van technologie.",
-          "Een strandwacht heeft nachtdienst.",
-          "Een dokter doet alles om zijn patiënt te helpen en verdwaalt langzaam in een duister sprookje."
-        ],
-        details: "Engelstalig. 139 pagina's. 5 verhalen. Geschreven door Sebastiaan Mathôt. Illustratie door Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a>"
-      }
-    }
-  }
-};
-
-let currentLang = 'en';
-
-// Function to render content based on selected language
-function renderContent(lang) {
-    const data = content[lang];
-
-    // Update page title and subtitle
-    document.getElementById('top-title').textContent = data.title;
-    document.getElementById('subtitle').textContent = data.subtitle;
-    document.getElementById('handmade-text').textContent = data.handmade;
-
-    // Update pricing text
-    document.getElementById('pricing-text').innerHTML = data.pricing;
-
-    // Render books
-    const booksContainer = document.getElementById('books-container');
-    booksContainer.innerHTML = '';
-
-    const bookOrder = ['eenwereldvoldenkers', 'griffinfly', 'botanist', 'suchwasnot'];
-
-    bookOrder.forEach((bookKey, index) => {
-        const book = data.books[bookKey];
-
-        let bookHTML = `
-            <div class='full-title'>
-                <span class='title' id='${bookKey}'>${book.title}</span>
-                ${book.subtitle ? ` ${book.subtitle}` : ''}<br />
-            </div>
-
-            <div class='cover-image'><img src="${bookKey}-cover.jpg" /></div>
-
-            <div class='book-summary'>
-                <div class='description'>
-                    ${book.stories.join(' ')}
-                </div>
-
-                <div class='details link-buttons'>
-                    ${book.details}
-                </div>
-            </div>
-        `;
-
-        if (index < bookOrder.length - 1) {
-            bookHTML += '<hr>';
-        }
-
-        booksContainer.innerHTML += bookHTML;
-    });
-}
-
-// Language toggle functionality
+// Simplified language switching
 document.addEventListener('DOMContentLoaded', function() {
-    // Set initial language based on browser settings or default to English
+    // Set initial language based on browser settings or saved preference
+    const savedLang = localStorage.getItem('preferredLanguage');
     const browserLang = navigator.language.substring(0, 2);
-    currentLang = (browserLang === 'nl') ? 'nl' : 'en';
-
+    const initialLang = savedLang || ((browserLang === 'nl') ? 'nl' : 'en');
+    
+    // Set the language
+    document.documentElement.lang = initialLang;
+    
     // Update active button
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+        btn.classList.toggle('active', btn.dataset.lang === initialLang);
+        btn.classList.toggle('inactive', btn.dataset.lang !== initialLang);
     });
-
-    // Render initial content
-    renderContent(currentLang);
-
+    
     // Add click handlers for language buttons
     document.querySelectorAll('.lang-btn').forEach(button => {
         button.addEventListener('click', function() {
-            currentLang = this.dataset.lang;
-
-            // Update active state
+            const newLang = this.dataset.lang;
+            
+            // Update page language
+            document.documentElement.lang = newLang;
+            
+            // Update button states
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn === this);
                 btn.classList.toggle('inactive', btn !== this);
             });
-
-            // Update page language attribute
-            document.documentElement.lang = currentLang;
-
-            // Re-render content
-            renderContent(currentLang);
-
+            
             // Save preference
-            localStorage.setItem('preferredLanguage', currentLang);
+            localStorage.setItem('preferredLanguage', newLang);
         });
     });
-
-    // Check for saved language preference
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang && (savedLang === 'en' || savedLang === 'nl')) {
-        currentLang = savedLang;
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === currentLang);
-        });
-        renderContent(currentLang);
-    }
-});    
+});
     </script>
 </head>
 <body>
@@ -300,8 +114,15 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="lang-btn inactive" data-lang="nl">Deze site in het Nederlands</button>
     </div>
 
-    <h1 id='top-title'></h1>
-    <p id="subtitle"></p>
+    <h1 id='top-title'>
+        <span lang="en">Such was not the way things were</span>
+        <span lang="nl">Such was not the way things were</span>
+    </h1>
+    
+    <p id="subtitle">
+        <span lang="en">Stories of strange minds and the worlds they live in. Fact and fiction. English and Dutch. Written by Sebastiaan Mathôt.</span>
+        <span lang="nl">Verhalen over vreemde denkers en de werelden waarin ze leven. Feit en fictie. Engels- en Nederlandstalig. Geschreven door Sebastiaan Mathôt.</span>
+    </p>
 
     <div class="all-covers">
         <div class="cover-column">
@@ -329,14 +150,106 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
-    <p id="handmade-text"></p>
+    <p id="handmade-text">
+        <span lang="en">Offer: four times fact and fiction (pre-order)</span>
+        <span lang="nl">Actie: vier maal feit en fictie (voorbestelling)</span>
+    </p>
 
-    <div class='details' id="pricing-text"></div>
+    <div class='details' id="pricing-text">
+        <span lang="en">Four books for €45 (free shipping within the EU). The order will ship in September, as soon as Een wereld vol denkers is available. <a href=''>Order now</a></span>
+        <span lang="nl">Vier boeken voor €45 (geen verzendkosten binnen de EU). De boeken worden verzonden in september zodra Een wereld vol denkers is verschenen. <a href=''>Bestel nu</a></span>
+    </div>
 
     <hr>
 
     <div class='books' id="books-container">
-        <!-- Books will be dynamically inserted here -->
+        
+        <!-- Een wereld vol denkers -->
+        <div class='full-title'>
+            <span class='title' id='eenwereldvoldenkers'>Een wereld vol denkers</span>
+            <span lang="en"> (pre-order)</span>
+            <span lang="nl"> (voorbestelling)</span><br />
+        </div>
+
+        <div class='cover-image'><img src="eenwereldvoldenkers-cover.jpg" /></div>
+
+        <div class='book-summary'>
+            <div class='description'>
+                <span lang="en">What can we say about who has conscious experience, who doesn't, and who has only a little bit of conscious experience? Will AI ever be conscious? Does a flower perceive the sun as it tracks the sun's movement through the sky? Een wereld vol denkers is an exploration of the minds of humans, animals, plants, and AI.</span>
+                <span lang="nl">Kunnen we iets zeggen over wie er bewustzijn heeft, en wie niet, en wie maar een beetje? Kan AI ooit bewust worden? Neemt een bloem de zon waar als hij gedurende de dag met de zon meedraait? Een wereld vol denkers is een ontdekkingsreis door de gedachtewerelden van mens, dier, plant en AI.</span>
+            </div>
+
+            <div class='details link-buttons'>
+                <span lang="en">Dutch. Non-fictions. Illustrations by Theo Danes. Will be published early september by Uitgeverij Balans. €24 (free shipping within the EU). <a href=''>Order now</a></span>
+                <span lang="nl">Nederlandstalig. Non-fictie. Illustraties door Theo Danes. Verschijnt begin september bij Uitgeverij Balans. €24 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a></span>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Griffinfly -->
+        <div class='full-title'>
+            <span class='title' id='griffinfly'>Griffinfly</span><br />
+        </div>
+
+        <div class='cover-image'><img src="griffinfly-cover.jpg" /></div>
+
+        <div class='book-summary'>
+            <div class='description'>
+                <span lang="en">A soldier seeks refuge in the aftermath of a nuclear war. A psychotherapist uses a radical treatment to save a client.</span>
+                <span lang="nl">Een soldaat houdt zich schuil in de nasleep van een kernoorlog. Een psychotherapeut gebruikt een radicale behandeling om een cliënt te redden.</span>
+            </div>
+
+            <div class='details link-buttons'>
+                <span lang="en">English. 141 pages. 2 stories. Written by Sebastiaan Mathôt. Illustrations by Sophie Slaats and Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a></span>
+                <span lang="nl">Engelstalig. 141 pagina's. 2 verhalen. Geschreven door Sebastiaan Mathôt. Illustraties door Sophie Slaats en Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a></span>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- The botanist -->
+        <div class='full-title'>
+            <span class='title' id='botanist'>The botanist</span>
+            and other stories<br />
+        </div>
+
+        <div class='cover-image'><img src="botanist-cover.jpg" /></div>
+
+        <div class='book-summary'>
+            <div class='description'>
+                <span lang="en">An old man waits while a baboon keeps him company. A neurologist works on a mysterious case. A beekeeper has a complex relationship with his swarm. <a href="the-cephalopod.html">Two researchers with a shared past collaborate on an experiment with octopuses.</a> A priest battles with swarms of locusts. A young boy slows down his thoughts to the speed of plants.</span>
+                <span lang="nl">Een oude man en een baviaan wachten samen ergens op. Een neuroloog behandelt een mysterieuse patiënt. Een imker heeft een ingewikkelde relatie met zijn zwerm. <a href="the-cephalopod.html">Twee onderzoekers met een gedeeld verleden doen samen onderzoek naar de intelligentie van octopussen.</a> Een priester vecht met sprinkhanen. Een jongen vertraagt zijn gedachten tot de snelheid van planten.</span>
+            </div>
+
+            <div class='details link-buttons'>
+                <span lang="en">English. 143 pages. 6 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a></span>
+                <span lang="nl">Engelstalig. 143 pagina's. 6 verhalen. Geschreven door Sebastiaan Mathôt. Illustratie door Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a></span>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Such was not the way things were -->
+        <div class='full-title'>
+            <span class='title' id='suchwasnot'>Such was not the way things were</span>
+            and other stories<br />
+        </div>
+
+        <div class='cover-image'><img src="suchwasnot-cover.jpg" /></div>
+
+        <div class='book-summary'>
+            <div class='description'>
+                <span lang="en"><a href="such-was-not-the-way-things-were.html">A lizard tells stories to a shrike.</a> A woman studies asexual reproduction in octopuses, while her young boyfriend refuses to stay young forever. A woman uses technology to defeat a fatal disease. A life guard is on the night shift. A doctor does everything to help his patient, and gradually descends into a dark fairy tale.</span>
+                <span lang="nl"><a href="such-was-not-the-way-things-were.html">Een hagedis vertelt verhalen aan een kleine roofvogel.</a> Een vrouw doet onderzaak naar ongeslachtelijke voortplanting bij octopussen, terwijl haar vriend weigert om voor altijd jong te blijven. Een vrouw verslaat een dodelijke ziekte met behulp van technologie. Een strandwacht heeft nachtdienst. Een dokter doet alles om zijn patiënt te helpen en verdwaalt langzaam in een duister sprookje.</span>
+            </div>
+
+            <div class='details link-buttons'>
+                <span lang="en">English. 139 pages. 5 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes. €20 (free shipping within the EU). <a href=''>Order now</a></span>
+                <span lang="nl">Engelstalig. 139 pagina's. 5 verhalen. Geschreven door Sebastiaan Mathôt. Illustratie door Theo Danes. €20 (geen verzendkosten binnen de EU). <a href=''>Bestel nu</a></span>
+            </div>
+        </div>
+
     </div>
 
     <hr />
