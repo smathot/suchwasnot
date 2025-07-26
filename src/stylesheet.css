@@ -293,3 +293,47 @@ a {
     width: 100%; /* Make image fill the container */
     display: block; /* Remove extra space below image */
 }
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #999;
+}
+
+.lang-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .language-toggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    .lang-btn {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+}

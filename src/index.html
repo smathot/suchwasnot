@@ -1,145 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Such was not the way things were</title>
-        <link rel="icon" href="suchwasnot.svg" />
-        <link href="stylesheet.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crimson+Pro" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26205412-4"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'UA-26205412-4');
-        </script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="https://www.paypal.com/sdk/js?client-id=AT3ngFV0_47WDvoMTRO8kTMhwLyxqr3d2OPdfyuzEZoHQkCBuL9REo1ToxjBnJ3AhfFHRaYBywBrTel_&currency=EUR" data-sdk-integration-source="button-factory"></script>
-        <script type="text/javascript" src="suchwasnot.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Such was not the way things were</title>
+    <link rel="icon" href="suchwasnot.svg" />
+    <link href="stylesheet.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26205412-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-26205412-4');
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AT3ngFV0_47WDvoMTRO8kTMhwLyxqr3d2OPdfyuzEZoHQkCBuL9REo1ToxjBnJ3AhfFHRaYBywBrTel_&currency=EUR" data-sdk-integration-source="button-factory"></script>
+    <script src="content.js"></script>
+    <script src="suchwasnot.js"></script>
+</head>
+<body>
 
 <div id="photo"></div>
 
 <div id="container" class="scrolled-down">
 
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="nl">NL</button>
+    </div>
 
-<h1 id='top-title'>Such was not the way things were</h1>
-
-<p>
-Stories about worlds that could be ours and people that could be us.
-</p>
-
-
+    <h1 id='top-title'></h1>
+    <p id="subtitle"></p>
 
     <div class="all-covers">
         <div class="cover-column">
             <a href="#griffinfly">
-            <img src="griffinfly-cover.jpg">
+                <img src="griffinfly-cover.jpg">
             </a>
         </div>
         <div class="cover-column-padding"></div>
         <div class="cover-column">
             <a href="#botanist">
-            <img src="botanist-cover.jpg">
+                <img src="botanist-cover.jpg">
             </a>
         </div>
         <div class="cover-column-padding"></div>
         <div class="cover-column">
             <a href="#suchwasnot">
-            <img src="suchwasnot-cover.jpg"">
+                <img src="suchwasnot-cover.jpg">
             </a>
         </div>
     </div>
-    
-<p>
-Each book is made by hand, signed, numbered, and unique.
-</p>
 
-<div class='details'>
-€20 per book or €45 for the full collection of three books. Prices exclude shipping. To order, send an email to <a href="mailto:sebastiaan@suchwasnot.com">sebastiaan@suchwasnot.com</a>.
-</div>
-<hr>
-    
-<div class='books'>
-    <div class='full-title'>
-    <span class='title' id='griffinfly'>Griffinfly</span><br />
-    </div>
-    
-    <div class='cover-image'><img src="griffinfly-cover.jpg" /></div>
-    
-    <div class='book-summary'>
-    <div class='description'>
-        A soldier seeks refuge in the aftermath of a nuclear war.
-        A psychotherapist uses a radical treatment to save a client.
-    </div>
-    
-    <div class='details link-buttons'>
-        141 pages. 2 stories. Written by Sebastiaan Mathôt. Illustrations by Sophie Slaats and Theo Danes.
-    </div>
-    </div>
-    
-    <hr>
+    <p id="handmade-text"></p>
 
-    <div class='full-title'>
-    <span class='title' id='botanist'>The botanist</span> and other stories<br />
-    </div>
-    
-    <div class='cover-image'><img src="botanist-cover.jpg" /></div>
-    <div class='book-summary'>
-    <div class='description'>
-        An old man waits while a baboon keeps him company.
-        A neurologist works on a mysterious case.
-        A beekeeper has a complex relationship with his swarm.
-        <a href="the-cephalopod.html">Two researchers with a shared past collaborate on an experiment with octopuses.</a>
-        A priest battles with swarms of locusts.
-        A young boy slows down his thoughts to the speed of plants.
-    </div>
-    
-    <div class='details link-buttons'>
-        143 pages. 6 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
-    </div>
-    </div>
+    <div class='details' id="pricing-text"></div>
 
     <hr>
-    
-    <div class='full-title'>
-        <span class='title' id='suchwasnot'>Such was not the way things were</span> and other stories<br />
+
+    <div class='books' id="books-container">
+        <!-- Books will be dynamically inserted here -->
     </div>
-    
-    <div class='cover-image'><img src="suchwasnot-cover.jpg" /></div>
-    <div class='book-summary'>
-    <div class='description'>
-        <a href="such-was-not-the-way-things-were.html">A lizard tells stories to a shrike.</a>
-        A woman studies asexual reproduction in octopuses, while her young boyfriend refuses to stay young forever.
-        A woman uses technology to defeat a fatal disease.
-        A life guard is on the night shift.
-        A doctor does everything to help his patient, and gradually descends into a dark fairy tale.
+
+    <hr />
+
+    <div class="youtube-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cifj5UYQDZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
     </div>
+
+    <hr />
+
+    <div id="footer">
+        Suchwasnot.com is part of <a href="http://www.cogsci.nl/">CogSci</a>
     </div>
-    
-    <div class='details link-buttons'>
-        139 pages. 5 stories. Written by Sebastiaan Mathôt. Illustration by Theo Danes.
-    </div>    
-</div>
-
-<hr />
-
-<div class="youtube-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cifj5UYQDZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-</div>
-
-<hr />
-
-<div id="footer">
-    Suchwasnot.com is part of <a href="http://www.cogsci.nl/">CogSci</a>
-</div>
 
 </div>
+
 </body>
 </html>
